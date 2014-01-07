@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<!-- Default widget settings -->
+<Defaults>
+	<Button>
+		
+		
+		
+		
+	</Button>
+	<Text>
+		<Title 
+			filters="[new flash.filters.DropShadowFilter()]"
+			label-selectable="false"
+			mouseEnabled="false"
+			format-size="30"
+			format-color="0x00FF00"
+			format-bold="true"
+		/>
+	</Text>
+
+</Defaults>

@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<Widget id="'root'"
+	skin:Paint-color="0xC7EC95"
+	widthPt="90" heightPt="90"
+	leftPt="5"
+	topPt="5"
+	>
+    
+    <Text id="'myWidget'"
+        skin:Paint-border="1"
+		
+		left="100"
+		top="100"
+
+        text="'this is a text widget!'"
+        />
+		
+</Widget>

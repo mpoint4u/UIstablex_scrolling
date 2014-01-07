@@ -1,0 +1,93 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<!--<Floating id="'root'"
+	heightPt="100"
+	widthPt="100"
+        >-->
+
+<HBox 
+	skin:Paint-color="0xBAF578"
+	left="0"
+	w="480"
+	top="0"
+	h="800"	
+	childPadding="20"
+	>
+		
+    <!-- View group on the left side  -->
+
+	<!-- this is an INVISIBLE vertical container, which is JUST needed
+		 to position his children-->
+    <VBox
+             w = "200"
+			heightPt="36"
+            skin:Paint-color  = "0xD2D1AE"
+            skin:Paint-border = "4"
+             childPadding="25"
+             paddingTop="5"
+             paddingBottom="10">
+
+                <!-- all the buttons are now aligned by the VBox around them -->
+            <Text id="'myText'"
+                  skin:Paint-border="0"
+                  height="25"
+                  widthPt="90"
+                  text="'this is a VBox!'"
+                    />
+
+            <Button id="'myButton1'"
+                    skin:Paint-border="1"  skin:Paint-color  = "0xF75EDF"
+                    height="25"
+					widthPt="90"					
+                    text="'this is my Button 1!'"
+                    />
+
+            <Button id="'myButton2'"
+                    skin:Paint-border="1"  skin:Paint-color  = "0x77316C"
+                    height="25"
+					widthPt="90"
+                    text="'this is my Button 2!'"
+                    />
+					
+            <Button id="'myButton3'"
+                    skin:Paint-border="1"  skin:Paint-color  = "0x8080FF"
+                    height="25"
+					widthPt="90"
+                    text="'this is my Button 3!'"
+                    />
+
+            <Button id="'myButton4'"
+                    skin:Paint-border="1"  skin:Paint-color  = "0xFFFFFF"
+                    height="25"
+					widthPt="90"
+                    text="'this is my Button 4!'"
+                    />
+    </VBox>		
+		
+    <!-- List 2 -->
+    <Scroll
+            w                 = "180"
+            heightPt          = "90"
+            skin:Paint-color  = "0xAAAAAA"
+            skin:Paint-border = "8"
+            vBar-slider-skin:Paint-color="0x002200"
+            hBar-visible = "false"
+            on-display = "
+            $this.scrollY  = $this.h / 2 - $this.box.h / 2;
+        ">
+
+        <Box widthPt="100" childPadding="10" paddingTop="10" paddingBottom="10">
+
+                    <!-- this widget will be taken by Scroll widget as scrolled content -->
+            <meta:repeat times="20">
+
+                <Widget skin:Tile-border="4" skin:Tile-src="'assets/img/nme.png'" skin:Tile-corners="[10]"
+                        widthPt="80"
+                        h="60"/>
+
+            </meta:repeat>
+
+        </Box>
+    </Scroll>
+</HBox>
+<!--</Floating>-->

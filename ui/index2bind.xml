@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<HBox 
+	skin:Paint-color="0xC8CAA4"
+	left="0"
+	w="480"
+	top="0"
+	h="800"	
+	childPadding="20"
+	>
+		
+    <VBox
+             w = "200"
+			heightPt="50"
+            skin:Paint-color  = "0x8D9FF3"
+            skin:Paint-border = "4"
+             childPadding="25"
+             paddingTop="5"
+             paddingBottom="10">
+
+            <Text id="'myText'"
+                  skin:Paint-border="0"
+                  height="25"
+                  widthPt="90"
+                  text="'dummy text in a TF!'"
+                    />
+
+            <Button id="'myButton1'"
+                    skin:Paint-border="1"  skin:Paint-color  = "0x63F19C"
+                    height="25"
+					widthPt="90"					
+                    text="'this is my Button 001!'"
+                    />
+					
+					
+    </VBox>				
+</HBox>
+

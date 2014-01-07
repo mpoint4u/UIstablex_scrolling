@@ -1,0 +1,85 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+        <!--autoWidth="true"-->
+        <!--autoHeight="true"-->
+
+<Floating id="'root'"
+          skin:Paint-color="0x80FF00"
+          heightPt="100"
+          widthPt="100"
+        >
+
+	<Box childPadding="25">
+
+<!--
+    widthPt="50"
+    heightPt="80"-->
+<!--    <Scroll id="'container'"
+                    skin:Paint-color="0x80FFFF"
+                 >-->
+
+                    <Button id="'myButton1'"
+                          skin:Paint-border="1"
+                          height="35"
+                          text="'this is my Button 1!'"
+                          />
+
+                    <Button id="'myButton2'"
+                          skin:Paint-border="1"
+                          height="35"
+                          text="'this is my Button 2!'"
+                          />
+
+                    <Button id="'myButton3'"
+                          skin:Paint-border="1"
+                          height="35"
+                          text="'this is my Button 3!'"
+                          />
+
+                    <Button id="'myButton4'"
+                          skin:Paint-border="1"
+                          height="35"
+                          text="'this is my Button 4!'"
+                          />
+
+                    <Button id="'myButton5'"
+                            skin:Paint-border="1"
+                            height="35"
+                            text="'this is my Button 5!'"
+                            />
+
+                    <Button id="'myButton6'"
+                            skin:Paint-border="1"
+                            height="35"
+                            text="'this is my Button 6!'"
+                            />
+
+                    <Button id="'myButton7'"
+                            skin:Paint-border="1"
+                            height="35"
+                            text="'this is my Button 7!'"
+                            />
+
+                    <Button id="'myButton8'"
+                            skin:Paint-border="1"
+                            height="35"
+                            text="'this is my Button 8!'"
+                            />
+
+                    <Button id="'myButton9'"
+                            skin:Paint-border="1"
+                            height="35"
+                            text="'this is my Button 9!'"
+                            />
+
+                    <Button id="'myButton10'"
+                            skin:Paint-border="1"
+                            height="35"
+                            text="'this is my Button 10!'"
+                            />
+
+<!--            </Scroll>-->
+
+	</Box>
+
+</Floating>

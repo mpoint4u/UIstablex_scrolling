@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+        <!--autoWidth="true"-->
+        <!--autoHeight="true"-->
+
+<Floating id="'root'"
+          skin:Paint-color="0x80FF80"
+    w="$Lib.current.stage.stageWidth"
+    h="$Lib.current.stage.stageHeight"
+    left="0"
+    top="0"
+    padding="50"
+	>
+
+         <!--skin:Paint-color="0x80FFFF"-->
+
+    <Box id="'container'"
+         childPadding="35"
+         >
+
+        <Button id="'myButton1'"
+              skin:Paint-border="1"
+              height="35"
+              text="'this is my Button 1!'"
+              />
+
+        <Button id="'myButton2'"
+              skin:Paint-border="1"
+              height="35"
+              text="'this is my Button 2!'"
+              />
+
+        <Button id="'myButton3'"
+              skin:Paint-border="1"
+              height="35"
+              text="'this is my Button 3!'"
+              />
+
+        <Button id="'myButton4'"
+              skin:Paint-border="1"
+              height="35"
+              text="'this is my Button 4!'"
+              />
+
+    </Box>
+</Floating>

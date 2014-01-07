@@ -1,0 +1,63 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<!-- root element for our UI  ........ here in light green color -->
+<Floating id="'root'" 
+		widthPt="90" heightPt="100"
+		leftPt="5"
+		skin:Paint-color="0xD5E9BE"
+        on-resize="
+        #screens.h = $this.h - #bottomMenu.h - #topMenu.h;
+   ">
+
+
+    <!-- Header -->
+    <HBox id="'topMenu'" defaults="'TopMenu'" skin:Paint-color="0x3F3F3F" widthPt="100" >
+        <Bmp src="'ui/android/img/ico/light/settings.png'" />
+        <Text defaults="'Default,H1'" text="'StablexUI'"/>
+    </HBox>
+	
+
+    <!-- Screens holder -->
+<!--    <ViewStack -->
+	<Widget
+		    id="'screens'" widthPt="100"
+		    >
+<!--		    trans:Slide-direction="'left'" trans:Slide-duration="0.2"-->
+
+		<Scroll
+                top="25"
+                left="50"
+				w                 = "200"
+				heightPt          = "90"
+				skin:Paint-color  = "0xAAAAAA"
+				skin:Paint-border = "4"
+				vBar-slider-skin:Paint-color="0x002200"
+				hBar-visible = "false"
+				on-display = "
+				$this.scrollY  = $this.h / 2 - $this.box.h / 2;
+			">
+
+							   <!-- this widget will be taken by Scroll widget as scrolled content -->
+			<Box widthPt="100" childPadding="10" paddingTop="10" paddingBottom="10">
+
+				<meta:repeat times="19">
+
+					<Widget skin:Tile-border="2" skin:Tile-src="'assets/img/nme.png'" skin:Tile-corners="[10]"
+							widthPt="85" h="45"/>
+
+				</meta:repeat>
+
+			</Box>
+		</Scroll>
+	</Widget>
+
+    <!-- Main menu -->
+    <HBox id="'bottomMenu'" defaults="'BottomMenu'" skin:Paint-color="0x3F3F3F" widthPt="100">
+        <!-- back button -->
+        <Button ico-src="'ui/android/img/ico/light/mainBack.png'"  on-click="" />
+        <!-- home button -->
+        <Button ico-src="'ui/android/img/ico/light/mainHome.png'" on-click="" />
+        <!-- recent button -->
+        <Button ico-src="'ui/android/img/ico/light/mainRecent.png'"  on-click="" />
+    </HBox>
+</Floating>

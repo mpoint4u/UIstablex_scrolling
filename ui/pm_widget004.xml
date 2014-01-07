@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="UTF-8"?>
+		
+<Widget 
+		w="400" h="780"
+		
+		>
+<!--	childPadding="20"-->
+	
+	
+	<!--		heightPt="100"
+			widthPt="100"-->
+		
+			
+
+<!--<Floating id="'root'"
+		  skin:Paint-color="0x80FF00"
+		  heightPt="100"
+		  widthPt="100"
+		>-->			
+			
+			
+			
+		<!-- List -->
+		<Scroll
+				w                 = "150"
+				h                 = "500"
+				skin:Paint-color  = "0xAAAAAA"
+				skin:Paint-border = "4"
+				vBar-slider-skin:Paint-color="0x002200"
+				hBar-visible = "false"
+				on-display = "
+				$this.scrollY  = $this.h / 2 - $this.box.h / 2;
+			">
+
+
+			<Box widthPt="100" childPadding="5" paddingTop="10" paddingBottom="10"> <!-- this widget will be taken by Scroll widget as scrolled content -->
+
+				<meta:repeat times="40">
+
+					<Widget skin:Tile-border="4" skin:Tile-src="'/Users/marcus/Dropbox/DEV/haXe3/pm_haxe3_projects/UIstablex100/assets/img/nme.png'" skin:Tile-corners="[20]" widthPt="100" h="50"/>
+
+				</meta:repeat>
+			</Box>
+		</Scroll>
+</Widget>
+
+<!--</Floating>-->
