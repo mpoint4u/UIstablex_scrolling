@@ -63,23 +63,30 @@ class MainBind extends Sprite {
 						// the comfortably variant (unfort. it removes binding imm. after first usage...)  
  * */
 
-/********** BINDING TEST 2 (the MANUAL, but SAFE way) ********************/
+/********** BINDING TEST 2 (the MANUAL, but SAFE way) ******************
 		var listener0 = function(_, b) { myTextWidget_001.text = b; }
 		
-			vo.__fieldBindings__.add("s",listener0);
-			//listener0(null, vo.s);   // gets called 1 time anyway (in the previous line)
+		vo.__fieldBindings__.add("s",listener0);
+		listener0(null, vo.s);   // gets called 1 time anyway (in the previous line)
+	**/	
+
+		// Bind.bindx( vo.s, function(_, s) myTextWidget_001.text = s );
+		Bind.bindxTo( vo.s , myTextWidget_001.text );
 		
-		
+		// all this changes of the vo field should be reflected in the widget textfield
+		// i.e. only the LAST CHANGE will be visible...
 		vo.s = "Hi, binding worked !!";
+		vo.s = "how nice !!";
+		vo.s = "changed 3rd time...";
+		vo.s = "4th change... !!";
 		
-		var unbind_s = function () {
+/*		var unbind_s = function () {
 			vo.__fieldBindings__.remove("s",listener0);
 			listener0 = null;
 			};
 			
-		//unbind_s();
-
-		vo.s = "how nice !!";
+			//unbind_s();
+	*/
 		
 /*  like this a FUNCTION can be bound (and unbound) ...
  * 
@@ -99,13 +106,15 @@ class MainBind extends Sprite {
 			this.globalCall++;	
 			});*/		
 
-		//trace_Counters("After first v.def attachment");
+/*		additional testing	
+ * 
+ * trace_Counters("After first v.def attachment");
 		
 		vo.def = 14;
-		//this.widget.text = '$v';
-		//trace_Counters("After 2nd  v.def attachment");
+		this.widget.text = '$v';
+		trace_Counters("After 2nd  v.def attachment");
 		
-		// etc....
+		 etc....*/
 	}
 	
 	private function createTextWidget():Text {
@@ -131,9 +140,9 @@ class MainBind extends Sprite {
 	 *  nme.Assets.getBitmapData("img/assetname.jpg");		
 	 *  
 	 *  prepare StablexUI i.e. register Main class so we can use it in xml (if needed..)
-	 *  UIBuilder.regClass("MainBind");
 	 * 
 	 * */			
+	    UIBuilder.regClass("MainBind");
 		UIBuilder.init('ui/defaults.xml');
 		}
 			

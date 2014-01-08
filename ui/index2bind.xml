@@ -10,13 +10,13 @@
 	>
 		
     <VBox
-             w = "200"
-			heightPt="50"
-            skin:Paint-color  = "0x8D9FF3"
-            skin:Paint-border = "4"
-             childPadding="25"
-             paddingTop="5"
-             paddingBottom="10">
+          w = "200"
+			    heightPt="50"
+          skin:Paint-color  = "0x8D9FF3"
+          skin:Paint-border = "4"
+          childPadding="25"
+          paddingTop="5"
+          paddingBottom="10">
 
             <Text id="'myText'"
                   skin:Paint-border="0"
@@ -28,8 +28,8 @@
             <Button id="'myButton1'"
                     skin:Paint-border="1"  skin:Paint-color  = "0x63F19C"
                     height="25"
-					widthPt="90"					
-                    text="'this is my Button 001!'"
+					          widthPt="90"					
+                    text="'press me to change TF text..'"
                     />
 					
 					

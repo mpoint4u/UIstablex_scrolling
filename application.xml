@@ -6,7 +6,7 @@
 	<meta title="UIstablex_scrolling" package="com.example.UIstablexscrolling" version="1.0.0" company="pm" />
 	
 	<!-- output -->
-	<app main="Main" file="UIstablexscrolling" path="bin" />
+	<app main="MainBind" file="UIstablexscrolling" path="bin" />
 
 	<window width="480" height="800" fps="60" if="flash" unless="mobile" />
 	<window width="0" height="0" if="mobile" />
