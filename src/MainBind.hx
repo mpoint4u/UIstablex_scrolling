@@ -5,6 +5,7 @@ import flash.events.Event;
 import flash.Lib;
 import ru.stablex.ui.UIBuilder;
 import ru.stablex.ui.widgets.Text;
+import TextBindable;
 
 		//  time to import my own Value class 
 		//import MyValueObject;
