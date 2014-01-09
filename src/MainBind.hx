@@ -4,7 +4,7 @@ import flash.display.Sprite;
 import flash.events.Event;
 import flash.Lib;
 import ru.stablex.ui.UIBuilder;
-import ru.stablex.ui.widgets.Text;
+//import ru.stablex.ui.widgets.Text;
 import TextBindable;
 
 		//  time to import my own Value class 
@@ -20,7 +20,7 @@ class MainBind extends Sprite {
 			
 	/* MEMBER FIELDS*/
 	var inited:Bool = false;
-	var myTextWidget_001:Text = null;
+	var myTextWidget_001:TextBindable = null;
 	
 /* just for testing 
 	var globalCall:Int = 0;
@@ -76,10 +76,9 @@ class MainBind extends Sprite {
 		
 		// all this changes of the vo field should be reflected in the widget textfield
 		// i.e. only the LAST CHANGE will be visible...
-		vo.s = "Hi, binding worked !!";
 		vo.s = "how nice !!";
-		vo.s = "changed 3rd time...";
-		vo.s = "4th change... !!";
+		vo.s = "Hi, binding works !!";
+
 		
 /*		var unbind_s = function () {
 			vo.__fieldBindings__.remove("s",listener0);
@@ -118,13 +117,13 @@ class MainBind extends Sprite {
 		 etc....*/
 	}
 	
-	private function createTextWidget():Text {
+	private function createTextWidget():TextBindable {
 		// create the Text widget programmatically and give it back to the caller
-		return UIBuilder.create( Text, {
-			id  : 'myWidget',
+		return UIBuilder.create( TextBindable, {
+			id  : 'myTextBindable',
 			left:  50,
 			top : 100,
-			text: 'some static dummy text ...'
+			text: 'dummy text in TextBindable'
 			});	
 	}
 	
@@ -144,6 +143,7 @@ class MainBind extends Sprite {
 	 * 
 	 * */			
 	    UIBuilder.regClass("MainBind");
+		UIBuilder.regClass("TextBindable");
 		UIBuilder.init('ui/defaults.xml');
 		}
 			

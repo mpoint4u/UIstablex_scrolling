@@ -20,15 +20,14 @@ using bindx.Bind;
 
 	public function new() 
 	{
-		super();
-		
+		super();		
 	}
 	
 	
 	@bindable override public function toString():String {
 		
 		var tempStr:String = this.label.text;
-		trace("ru.stablex.ui.widgets.Text.toString just returns: " + tempStr);
+		trace("TextBindable.toString just returns: " + tempStr);
 		return this.label.text;
 		}
 	

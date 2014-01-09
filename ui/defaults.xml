@@ -1,13 +1,17 @@
 <?xml version="1.0" encoding="utf-8" ?>
 <!-- Default widget settings -->
 <Defaults>
-	<Button>
+	<Widget></Widget>
+	<TextBindable
+		skin:Paint-corners="[20]" 
+		box-padding="10"
+		>
+		<bg skin:Paint-color="0xECC795" />
 		
-		
-		
-		
-	</Button>
-	<Text>
+	</TextBindable>
+	
+	
+<!--<Text>
 		<Title 
 			filters="[new flash.filters.DropShadowFilter()]"
 			label-selectable="false"
@@ -16,6 +20,8 @@
 			format-color="0x00FF00"
 			format-bold="true"
 		/>
-	</Text>
+	</Text>-->
 
+<!--<Button> 
+	</Button>-->
 </Defaults>
