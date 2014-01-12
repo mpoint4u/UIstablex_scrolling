@@ -4,6 +4,7 @@ import flash.display.Sprite;
 import flash.events.Event;
 import flash.Lib;
 import ru.stablex.ui.UIBuilder;
+import ru.stablex.ui.widgets.Widget;
 //import ru.stablex.ui.widgets.Text;
 import TextBindable;
 
@@ -44,10 +45,12 @@ class MainBind extends Sprite {
 		//trace_Counters("Right Before startTest");
 	
 		// instantiate a NEW VALUE OBJECT and a NEW TEXT WIDGET  !!
-		this.myTextWidget_001 = createTextWidget(); // trace(" instantiated a NEW TEXT WIDGET !!");	
-		this.addChild(myTextWidget_001);   			// or SAFE // this.addChild(this.myTextWidget_001);      
-													// trace(" added WIDGET to the STAGE !!");
+		this.myTextWidget_001 = createTextWidget(); // trace(" instantiated a NEW TEXT WIDGET !!");
 		
+		// this widget can now MANIPULATED in code...
+		this.myTextWidget_001.text = "text was overwritten in code...";
+		
+
 		var vo = new Value();			
 									// trace(" instantiated a NEW VALUE OBJECT !!");	
 		vo.a = 5;
@@ -71,50 +74,43 @@ class MainBind extends Sprite {
 		listener0(null, vo.s);   // gets called 1 time anyway (in the previous line)
 	**/	
 
-		// Bind.bindx( vo.s, function(_, s) myTextWidget_001.text = s );
-		Bind.bindxTo( vo.s , myTextWidget_001.text );
-		
+		Bind.bindx( vo.s, function(_, s) myTextWidget_001.text = s );
+		//     Bind.bindxTo( vo.s , myTextWidget_001.text );
+	
 		// all this changes of the vo field should be reflected in the widget textfield
 		// i.e. only the LAST CHANGE will be visible...
 		vo.s = "how nice !!";
-		vo.s = "Hi, binding works !!";
+		//vo.s = "Hi, binding works !!";
+		vo.s = "time for some serious fun!";
 
+/****** CREATE the BASE UI  */		
+		var myCustomUI = UIBuilder.create(CustomUI);
+		//trace(Type.typeof(myCustomUI));
+		//trace(Type.typeof(myCustomUI.box));
 		
-/*		var unbind_s = function () {
-			vo.__fieldBindings__.remove("s",listener0);
-			listener0 = null;
-			};
-			
-			//unbind_s();
-	*/
-		
-/*  like this a FUNCTION can be bound (and unbound) ...
- * 
- var unbind = function() {	vo.s.bindx(function (from:String, to:String) 
-															{ 
-															trace('vo.s changed from: $from to: $to'); 
-															} 
-											);
-							}
-		unbind();
+		// put the TextWidget on the custom UI
+		myCustomUI.holder.addChildAt(myTextWidget_001, 0);
 
- */		
+		// make some changes to the UI if needed...
+		myCustomUI.btn.label.text = "Press me";
+		//trace(Type.typeof(myCustomUI.btn));
+		trace(myCustomUI.btn.label.text);	
 		
-/*	looking for ANY (=GLOBAL) CHANGES to MEMBERS VARS of VALUE objects !! 
- *  
- * vo.bindxGlobal(function (varName:String, old:Dynamic, val:Dynamic) {
-			this.globalCall++;	
-			});*/		
-
-/*		additional testing	
- * 
- * trace_Counters("After first v.def attachment");
 		
-		vo.def = 14;
-		this.widget.text = '$v';
-		trace_Counters("After 2nd  v.def attachment");
+		 
+/*******	ADDING WIDGET TO STAGE		*/	 
+/*		Lib.current.addChild( 
 		
-		 etc....*/
+			UIBuilder.buildFn('ui/index.xml')()
+			//UIBuilder.buildFn('ui/index2bind.xml')() 
+		
+							);*/
+							
+		this.addChild(myCustomUI);
+		// or SAFE // this.addChild(this.myTextWidget_001);      
+				 
+		 
+		trace(" added WIDGET to the STAGE !!");
 	}
 	
 	private function createTextWidget():TextBindable {
@@ -123,7 +119,8 @@ class MainBind extends Sprite {
 			id  : 'myTextBindable',
 			left:  50,
 			top : 100,
-			text: 'dummy text in TextBindable'
+			text: 'myTextBindable just instantiated...'
+			
 			});	
 	}
 	
@@ -142,8 +139,11 @@ class MainBind extends Sprite {
 	 *  prepare StablexUI i.e. register Main class so we can use it in xml (if needed..)
 	 * 
 	 * */			
-	    UIBuilder.regClass("MainBind");
-		UIBuilder.regClass("TextBindable");
+	    //UIBuilder.regClass('MainBind');
+		//UIBuilder.buildClass("ui/custom_UI.xml", "CustomUI");
+		
+		UIBuilder.regClass('TextBindable');
+		
 		UIBuilder.init('ui/defaults.xml');
 		}
 			

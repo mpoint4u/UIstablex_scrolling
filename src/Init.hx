@@ -12,10 +12,10 @@ class Init
 	macro static public function init():Void {
 		
 		// register class(es) for usage in XML
-		UIBuilder.regClass("");
+		// UIBuilder.regClass("CustomWidget");
 		
 		// build XML-based class
-		UIBuilder.buildClass("ui/index2bind.xml", CustomWidget);
+		UIBuilder.buildClass("ui/custom_UI.xml", "CustomUI");
 		
 	}
 	

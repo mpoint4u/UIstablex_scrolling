@@ -20,7 +20,8 @@ using bindx.Bind;
 
 	public function new() 
 	{
-		super();		
+		super();
+		// here goes code that makes this class behave different than it parent class
 	}
 	
 	

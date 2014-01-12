@@ -8,15 +8,21 @@
 	<!-- output -->
 	<app main="MainBind" file="UIstablexscrolling" path="bin" />
 
+<!--	
 	<window width="480" height="800" fps="60" if="flash" unless="mobile" />
-	<window width="0" height="0" if="mobile" />
-	<window orientation="auto" />
-	<window background="#0xC0C0C0" />   <!-- grey, showing in Flash (but not in NEKO) -->
+	<window width="0" height="0" if="mobile" />-->
+	<window width="480" height="800" fps="60" />
+	<window orientation="portrait" />
+	<window background="#0x000000" />   <!-- bgcolor:Flider, showing in Flash (but not in NEKO) -->
 	
 <!--
 	<window orientation="portrait" vsync="false" antialiasing="0" if="cpp" />
 	
 	-->
+
+	<!-- call this function before compiling the app 	-->
+	<haxeflag name="--macro" value="Init.init()" />
+
 	
 	<!-- classpath, haxe libs -->
 	<source path="src" />

@@ -5,8 +5,7 @@
 	<TextBindable
 		skin:Paint-corners="[20]" 
 		box-padding="10"
-		>
-		<bg skin:Paint-color="0xECC795" />
+		skin:Paint-color="0xECC795">
 		
 	</TextBindable>
 	

@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<Widget 
+	skin:Paint-color="0xC8CAA4"
+	left="0"
+	w="480"
+	top="0"
+	h="800"	
+
+	>
+	
+            <TextBindable 
+				id="'myText'"
+                	skin:Paint-color="0x81F07D"
+					skin:Paint-border="1"
+					heightPt="10"
+					
+					top="200"
+					left="20"
+					text="'this is a reg Text!'"
+                    />
+	
+
+		
+			
+    <Button id="'myButton1'"
+        skin:Paint-border="2"  
+		skin:Paint-color  = "0xDAAFD3"
+		top="290"
+		left="20"
+		height="25"
+		widthPt="80"					
+        text="'press me to change TF text..'"
+		
+            />					
+		
+</Widget>
+
