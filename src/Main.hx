@@ -5,25 +5,25 @@ import flash.events.Event;
 import flash.Lib;
 import ru.stablex.ui.UIBuilder;
 import ru.stablex.ui.widgets.Widget;
-//import ru.stablex.ui.widgets.Text;
-import TextBindable;
 
-		//  time to import my own Value class 
-		//import MyValueObject;
+//  time to import my own classes
+// import MyValueObject;  // TODO:  check with Dima how to separate Value classes in conn with 'using bindx.Bind'
+import TextBindable;
 		
 import bindx.IBindable;
 using bindx.Bind;
 
 /**  
  * Simple demo project for using the bindx -lib with StablexUI  
- * **/ 
+ * **/
+
 class Main extends Sprite {
 			
 	/* MEMBER FIELDS*/
 	var inited:Bool = false;
 	var myTextWidget_001:TextBindable = null;
 	
-/* just for testing 
+/*  vars just for testing ..........
 	var globalCall:Int = 0;
 	var toStringCall:Int = 0;
 	var aCall:Int = 0;
@@ -36,11 +36,10 @@ class Main extends Sprite {
 			super();
 			addEventListener(flash.events.Event.ADDED_TO_STAGE, addedToStage);			
 			init();  	//  additional init tasks... 			
-			//createUI();	  		// and add it to display list on the stage...
-			startTest();
+			constructUI();
 	}		
 		
-	private function startTest():Void {
+	private function constructUI():Void {
 		//  start testing
 		//trace_Counters("Right Before startTest");
 	
@@ -74,8 +73,8 @@ class Main extends Sprite {
 		listener0(null, vo.s);   // gets called 1 time anyway (in the previous line)
 	**/	
 
-		Bind.bindx( vo.s, function(_, s) myTextWidget_001.text = s );
-		//     Bind.bindxTo( vo.s , myTextWidget_001.text );
+		// Bind.bindx( vo.s, function(_, s) myTextWidget_001.text = s );
+		   Bind.bindxTo( vo.s , myTextWidget_001.text );
 	
 		// all this changes of the vo field should be reflected in the widget textfield
 		// i.e. only the LAST CHANGE will be visible...
@@ -136,26 +135,18 @@ class Main extends Sprite {
 	 *  Assets:
 	 *  nme.Assets.getBitmapData("img/assetname.jpg");		
 	 *  
-	 *  prepare StablexUI i.e. register Main class so we can use it in xml (if needed..)
+	 *  prepare StablexUI i.e. register various classes so we can use it in xml (if needed..)
 	 * 
-	 * */			
-	    //UIBuilder.regClass('MainBind');
-		//UIBuilder.buildClass("ui/custom_UI.xml", "CustomUI");
-		
-		UIBuilder.regClass('TextBindable');
-		
+	 *  we can even BUILD CUSTOM CLASSES here, but this has still to be explored...
+	 *  (details can be found in this post by Alex Kuzmenko.. 
+	 *    		https://github.com/RealyUniqueName/StablexUI/issues/91
+	 * )
+	 *  UIBuilder.buildClass("ui/custom_UI.xml", "CustomUI");
+	 * 
+	 * */					
+		UIBuilder.regClass('TextBindable');	
 		UIBuilder.init('ui/defaults.xml');
 		}
-			
-/*	function trace_Counters(mess:String):Void {
-		trace("-----------------------------------");
-		trace("Called from '"    + mess + "'...");
-		trace("globalCall = "   + this.globalCall);		
-		trace("toStringCall = " + this.toStringCall);		
-		trace("aCall = "        + this.aCall);		
-		trace("lastS = "        + this.lastS);
-		trace("-----------------------------------");		
-	}*/
 	
 	private function addedToStage(e) {
 		removeEventListener(Event.ADDED_TO_STAGE, addedToStage);
@@ -174,7 +165,18 @@ class Main extends Sprite {
 		Lib.current.stage.align = flash.display.StageAlign.TOP_LEFT;
 		Lib.current.stage.scaleMode = flash.display.StageScaleMode.NO_SCALE;
 		Lib.current.addChild(new Main());
-	}	
+	}
+	
+/*	function trace_Counters(mess:String):Void {
+		trace("-----------------------------------");
+		trace("Called from '"    + mess + "'...");
+		trace("globalCall = "   + this.globalCall);		
+		trace("toStringCall = " + this.toStringCall);		
+		trace("aCall = "        + this.aCall);		
+		trace("lastS = "        + this.lastS);
+		trace("-----------------------------------");		
+	}*/	
+	
 }		//end of class MainBind
 
 
