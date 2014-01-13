@@ -6,10 +6,7 @@ import flash.Lib;
 import ru.stablex.ui.UIBuilder;
 import ru.stablex.ui.widgets.Widget;
 
-//  time to import my own classes
-
-// TODO:  check with Dima how to separate Value classes in conn with 'using bindx.Bind'
-// 
+//  time to import my own classes 
 import MyValueObject;
 import TextBindable;
 		
@@ -181,9 +178,6 @@ class Main extends Sprite {
 	}*/	
 	
 }		//end of class MainBind
-
-
-
 
 /* VALUE CLASS 
 @bindable class Value implements IBindable {

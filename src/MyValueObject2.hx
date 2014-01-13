@@ -11,12 +11,6 @@ using  bindx.Bind;
 /**
  * ...
  * @author pm  (with a lot of help from 'deep')
- * 
- * 
- * TODO  there's still a problem with the 
- * 			using bindx.Bind  statement above, 
- * 			still need to check that out...
- * 
  */
 
 @bindable class MyValueObject implements IBindable

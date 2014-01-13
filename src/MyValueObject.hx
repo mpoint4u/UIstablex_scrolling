@@ -6,13 +6,7 @@ using bindx.Bind;
 
 /**
  * ...
- * @author pm  (with a lot of help from 'deep')
- * 
- * 
- * TODO  there's still a problem with the 
- * 			using bindx.Bind  statement above, 
- * 			still need to check that out...
- * 
+ * @author pm  (with a lot of help from 'deep') 
  */
 
  @bindable class Value implements IBindable {
@@ -20,9 +14,6 @@ using bindx.Bind;
 	public function new() {}
 
 	public var def(default, default):Int;
-					//@bindable public var never(default, never):Int;
-					//@bindable public var no(default, null):Int;
-					//@bindable public var dyn(default, dynamic):Int;
 	
 	public var s:String;
 	
