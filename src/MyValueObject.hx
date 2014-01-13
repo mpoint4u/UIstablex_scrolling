@@ -1,12 +1,8 @@
 package ;
 
-/*
- * import bindx.BindSignal.MethodsBindSignal;
- * import bindx.BindSignal.FieldsBindSignal;
- * */
-import bindx.IBindable
+import bindx.IBindable;
 
-using  bindx.Bind;
+using bindx.Bind;
 
 /**
  * ...

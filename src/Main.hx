@@ -7,7 +7,10 @@ import ru.stablex.ui.UIBuilder;
 import ru.stablex.ui.widgets.Widget;
 
 //  time to import my own classes
-// import MyValueObject;  // TODO:  check with Dima how to separate Value classes in conn with 'using bindx.Bind'
+
+// TODO:  check with Dima how to separate Value classes in conn with 'using bindx.Bind'
+// 
+import MyValueObject;
 import TextBindable;
 		
 import bindx.IBindable;
@@ -74,7 +77,7 @@ class Main extends Sprite {
 	**/	
 
 		// Bind.bindx( vo.s, function(_, s) myTextWidget_001.text = s );
-		   Bind.bindxTo( vo.s , myTextWidget_001.text );
+		Bind.bindxTo( vo.s , myTextWidget_001.text );
 	
 		// all this changes of the vo field should be reflected in the widget textfield
 		// i.e. only the LAST CHANGE will be visible...
@@ -182,7 +185,7 @@ class Main extends Sprite {
 
 
 
-/* VALUE CLASS */
+/* VALUE CLASS 
 @bindable class Value implements IBindable {
 		
 	public function new() {}
@@ -209,3 +212,4 @@ class Main extends Sprite {
 		// return '$a + $def + $s';
 	}	
 }
+*/
