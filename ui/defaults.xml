@@ -1,7 +1,27 @@
 <?xml version="1.0" encoding="utf-8" ?>
 <!-- Default widget settings -->
 <Defaults>
-	<Widget></Widget>
+
+    <HBox>
+        <!-- Top menu -->
+        <TopMenu
+                widthPt  = "100"
+                align    = "'left,middle'"
+                padding  = "5"
+                skinName = "'BlackBlueStripe'"
+                />
+        <!-- Bottom menu -->
+        <BottomMenu
+                widthPt       = "100"
+                align         = "'bottom,center'"
+                padding       = "5"
+                unifyChildren = "true"
+                skin:Paint-color="0x000000"
+                />
+    </HBox>
+
+
+
 	<TextBindable
 		skin:Paint-corners="[20]" 
 		box-padding="10"

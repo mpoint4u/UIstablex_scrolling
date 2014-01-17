@@ -4,6 +4,7 @@ import flash.display.Sprite;
 import flash.events.Event;
 import flash.Lib;
 import ru.stablex.ui.UIBuilder;
+import ru.stablex.ui.widgets.Button;
 import ru.stablex.ui.widgets.Widget;
 
 //  time to import my own classes 
@@ -22,6 +23,7 @@ class Main extends Sprite {
 	/* MEMBER FIELDS*/
 	var inited:Bool = false;
 	var myTextWidget_001:TextBindable = null;
+	var myProgButton_001:Button = null;
 	
 /*  vars just for testing ..........
 	var globalCall:Int = 0;
@@ -43,15 +45,18 @@ class Main extends Sprite {
 		//  start testing
 		//trace_Counters("Right Before startTest");
 	
-		// instantiate a NEW VALUE OBJECT and a NEW TEXT WIDGET  !!
-		this.myTextWidget_001 = createTextWidget(); // trace(" instantiated a NEW TEXT WIDGET !!");
-		
-		// this widget can now MANIPULATED in code...
+		// instantiate a NEW TEXT WIDGET  !!
+		this.myTextWidget_001 = createTextWidget(); 
 		this.myTextWidget_001.text = "text was overwritten in code...";
 		
-
+		// instantiate a NEW SIMPLE BUTTON  !!
+		this.myProgButton_001 = createButton();
+		//this.myProgButton_001.onPress(
+		
+		
+		//instantiate a NEW VALUE OBJECT 
 		var vo = new Value();			
-									// trace(" instantiated a NEW VALUE OBJECT !!");	
+	
 		vo.a = 5;
 		vo.def = 12;
 		vo.s = "..dummy start text in vo.s";
@@ -89,11 +94,18 @@ class Main extends Sprite {
 		
 		// put the TextWidget on the custom UI
 		myCustomUI.holder.addChildAt(myTextWidget_001, 0);
-
+		myCustomUI.holder.addChildAt(myProgButton_001, 2);		
+		
+		
 		// make some changes to the UI if needed...
-		myCustomUI.btn.label.text = "Press me";
+		// myCustomUI.btn.label.text = "Press me";
+		
+		
+		
+		
+		
 		//trace(Type.typeof(myCustomUI.btn));
-		trace(myCustomUI.btn.label.text);	
+		//trace(myCustomUI.btn.label.text);	
 		
 		
 		 
@@ -122,6 +134,19 @@ class Main extends Sprite {
 			
 			});	
 	}
+
+	private function createButton():Button {
+		// create the Text widget programmatically and give it back to the caller
+		return UIBuilder.create( Button, {
+			id  : 'myProgButton',
+			name: 'btn2',
+/*			skin:Paint-border="2"  
+			skin:Paint-color  = "0xDAAFD3"*/
+			height:25,
+			widthPt:90,					
+			text:'press me the 2nd Btn..'
+			});	
+	}	
 	
 	private function init(): Void {
 		if (this.inited) return;
@@ -145,6 +170,7 @@ class Main extends Sprite {
 	 * 
 	 * */					
 		UIBuilder.regClass('TextBindable');	
+		//UIBuilder.init('ui/android/defaults.xml');
 		UIBuilder.init('ui/defaults.xml');
 		}
 	

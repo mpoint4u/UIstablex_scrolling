@@ -15,7 +15,8 @@ class Init
 		// UIBuilder.regClass("CustomWidget");
 		
 		// build XML-based class
-		UIBuilder.buildClass("ui/custom_UI.xml", "CustomUI");
+		UIBuilder.buildClass("ui/custom_UI.xml", "CustomUI");		
+		//UIBuilder.buildClass("ui/index_android.xml", "CustomUI");
 		
 	}
 	
