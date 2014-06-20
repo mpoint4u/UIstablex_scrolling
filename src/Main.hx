@@ -142,9 +142,9 @@ class Main extends Sprite {
 			name: 'btn2',
 /*			skin:Paint-border="2"  
 			skin:Paint-color  = "0xDAAFD3"*/
-			height:25,
+			height:15,
 			widthPt:90,					
-			text:'press me the 2nd Btn..'
+			text:'2nd Btn..'
 			});	
 	}	
 	
