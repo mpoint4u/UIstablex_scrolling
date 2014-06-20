@@ -33,7 +33,7 @@
 		
 	<!-- assets -->
 	<icon path="assets/openfl.svg" />
-    <assets path="assets/img" include="*" />
+    <!--<assets path="assets/img" include="*" />-->
 	<assets path="ui/android/img" include="*" />
 <!--	<assets path="assets/img" rename="img" />-->
 	
