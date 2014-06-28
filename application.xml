@@ -13,7 +13,7 @@
 	<window width="0" height="0" if="mobile" />-->
 	<window width="480" height="800" fps="60" />
 	<window orientation="portrait" />
-	<window background="#0x000000" />   <!-- bgcolor:Flider, showing in Flash (but not in NEKO) -->
+	<window background="#0xFF80FF" />   <!-- bgcolor:Flider, showing in Flash (but not in NEKO) -->
 	
 <!--
 	<window orientation="portrait" vsync="false" antialiasing="0" if="cpp" />

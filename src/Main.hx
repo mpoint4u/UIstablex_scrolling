@@ -34,10 +34,10 @@ class Main extends Sprite {
 	
 	
 	public function new() {   	/* CONSTRUCTOR */
-		trace("constructor of class 'MainBind' called...");
+		trace("constructor of class 'Main' called...");
 			super();
 			addEventListener(flash.events.Event.ADDED_TO_STAGE, addedToStage);			
-			init();  	//  additional init tasks... 			
+			//init();  	//  here init()  is already called from inside the 'addedToStage()' method... 			
 			constructUI();
 	}		
 		
@@ -46,8 +46,9 @@ class Main extends Sprite {
 		//trace_Counters("Right Before startTest");
 	
 		// instantiate a NEW TEXT WIDGET  !!
-		this.myTextWidget_001 = createTextWidget(); 
+		this.myTextWidget_001 = createTextWidget();   // 
 		this.myTextWidget_001.text = "text was overwritten in code...";
+		//Lib.current.stage.addChild();
 		
 		// instantiate a NEW SIMPLE BUTTON  !!
 		this.myProgButton_001 = createButton();
@@ -92,7 +93,7 @@ class Main extends Sprite {
 		//trace(Type.typeof(myCustomUI));
 		//trace(Type.typeof(myCustomUI.box));
 		
-		// put the TextWidget on the custom UI
+		// put the TextWidget and the Button to the custom UI
 		myCustomUI.holder.addChildAt(myTextWidget_001, 0);
 		myCustomUI.holder.addChildAt(myProgButton_001, 2);		
 		
@@ -125,7 +126,9 @@ class Main extends Sprite {
 	}
 	
 	private function createTextWidget():TextBindable {
-		// create the Text widget programmatically and give it back to the caller
+		
+		trace(" created a TextBindable widget programmatically and giving it back to the calling function .. ");
+		
 		return UIBuilder.create( TextBindable, {
 			id  : 'myTextBindable',
 			left:  50,
@@ -138,13 +141,13 @@ class Main extends Sprite {
 	private function createButton():Button {
 		// create the Text widget programmatically and give it back to the caller
 		return UIBuilder.create( Button, {
-			id  : 'myProgButton',
-			name: 'btn2',
-/*			skin:Paint-border="2"  
-			skin:Paint-color  = "0xDAAFD3"*/
-			height:15,
-			widthPt:90,					
-			text:'2nd Btn..'
+			id  	: 'myProgButton',
+			name	: 'btn2',
+/*			skin:Paint-border = '2',  
+			skin:Paint-color  = '0xC835EC',*/
+			height	:15,
+			widthPt	:90,					
+			text	:'2nd Btn..'
 			});	
 	}	
 	
@@ -190,8 +193,8 @@ class Main extends Sprite {
 		// static entry point
 		Lib.current.stage.align = flash.display.StageAlign.TOP_LEFT;
 		Lib.current.stage.scaleMode = flash.display.StageScaleMode.NO_SCALE;
-		Lib.current.addChild(new Main());
-	}
+		// Lib.current.addChild(new Main());
+		Lib.current.stage.addChild(new Main());
 	
 /*	function trace_Counters(mess:String):Void {
 		trace("-----------------------------------");
@@ -200,10 +203,11 @@ class Main extends Sprite {
 		trace("toStringCall = " + this.toStringCall);		
 		trace("aCall = "        + this.aCall);		
 		trace("lastS = "        + this.lastS);
-		trace("-----------------------------------");		
-	}*/	
+		trace("-----------------------------------");
+		}    */
+	}	
 	
-}		//end of class MainBind
+}		//end of class Main
 
 /* VALUE CLASS 
 @bindable class Value implements IBindable {
